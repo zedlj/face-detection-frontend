@@ -83,7 +83,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-       fetch('https://vast-sierra-15377.herokuapp.com/imageurl', {
+       fetch('https://vast-sierra-15377.herokuapp.com/imageUrl', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
