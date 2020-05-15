@@ -35,7 +35,7 @@ const initialState = {
       email: '',
       entries: 0,
       joined: new Date(),
-        }
+   }
 }
 
 
@@ -76,7 +76,6 @@ class App extends Component {
 
   
   onInputChange = (event) => {
-    //console.log(event.target.value)
     this.setState({input: event.target.value});
   }
 
@@ -143,7 +142,7 @@ class App extends Component {
               <FaceRecognition box={box} imageUrl={imageUrl}/>
             </div>
          : (
-          this.state.route === 'signin' 
+          route === 'signin' 
            ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
            : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
            )  
