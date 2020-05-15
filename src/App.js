@@ -83,10 +83,10 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
        fetch('https://vast-sierra-15377.herokuapp.com/imageurl', {
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              input: this.state.input
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            input: this.state.input
           })
         })
         .then(response => response.json())
@@ -97,10 +97,10 @@ class App extends Component {
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
                 id: this.state.user.id
+              })
             })
-          })
-            .then(response => response.json())
-            .then(count => {
+             .then(response => response.json())
+             .then(count => {
               //only want to update part of user
               this.setState(Object.assign(this.state.user, { entries: count}))
             }) 
