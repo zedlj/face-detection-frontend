@@ -64,7 +64,7 @@ class App extends Component {
 //loop through data.regions (containing box info)
     for (faceBox = 0; len(data.outputs[0].data.regions[faceBox]); faceBox++) {
       data.outputs[0].data.regions[faceBox].region_info.bounding_box;
-      console.log(`face number {faceBox} has dimensions {data.outputs[0].data.regions[faceBox]} `)
+      console.log(`face number ${faceBox} has dimensions ${data.outputs[0].data.regions[faceBox]}`)
     }
 
 
