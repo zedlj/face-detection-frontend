@@ -57,15 +57,11 @@ class App extends Component {
   }
 
   calculateFaceLocation = (data) => {
-    console.log(data)
-    // data.ouptuts[0] arrays for all faces contained in here (keep this at zero)
-    // data.regions[number of faces] --change number to access bounding box for each face
+    console.log('API DATA:', data)
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-    //const clarifaiFace2 = data.outputs[0].data.regions[1].region_info.bounding_box;
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    //for loop- for box_measurements in data.region_info.bounding_box... return: (do box calculations)
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
@@ -75,8 +71,7 @@ class App extends Component {
   }
 
   displayFaceBox = (box) => {
-    console.log('this is the box')
-    console.log(box)
+    console.log('BOX CALCULATED DATA', box)
     this.setState({box: box})
   }
 
