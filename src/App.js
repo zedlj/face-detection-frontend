@@ -60,6 +60,14 @@ class App extends Component {
     console.log('FULL API DATA:', data)
     console.log('BOX1 API DATA', data.outputs[0].data.regions[0].region_info.bounding_box)
     console.log('BOX2 API DATA', data.outputs[0].data.regions[1].region_info.bounding_box)
+
+//loop through data.regions (containing box info)
+    for (faceBox = 0; len(data.outputs[0].data.regions[faceBox]); faceBox++) {
+      data.outputs[0].data.regions[faceBox].region_info.bounding_box;
+      console.log(`face number {faceBox} has dimensions {data.outputs[0].data.regions[faceBox]} `)
+    }
+
+
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
